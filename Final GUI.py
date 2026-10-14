@@ -1,3 +1,5 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
@@ -51,7 +53,7 @@ aa=Label(root,text="CHAM",font=("Calisto MT", 25, "bold"),bg="#F0FFFF",fg="Black
 aa.place(x=20,y=20)
 
 #icon
-image_icon=PhotoImage(file="D:/GUI/icon/logo1.png")
+image_icon=PhotoImage(file=os.path.join(BASE_DIR, "icon", "logo1.png"))
 root.iconphoto(False,image_icon)
 
 
@@ -61,27 +63,27 @@ textfield.place(x=70,y=90)
 
 
 #search icon
-Search_icon=PhotoImage(file="D:/GUI/icon/search.png") 
+Search_icon=PhotoImage(file=os.path.join(BASE_DIR, "icon", "search.png")) 
 myimage_icon=Button(image=Search_icon, borderwidth=0, cursor="hand2",command=getweather) 
 myimage_icon.place(x=220,y=90)
 
 #images
-temp=ImageTk.PhotoImage(Image.open("D:/GUI/icon/Temp.png"))
+temp=ImageTk.PhotoImage(Image.open(os.path.join(BASE_DIR, "icon", "Temp.png")))
 my_label=Label(image=temp)
 my_label.place(x=50,y=180)
 my_label.configure(bg="#F0FFFF")
 
-prep=ImageTk.PhotoImage(Image.open("D:/GUI/icon/Precipitation.png"))
+prep=ImageTk.PhotoImage(Image.open(os.path.join(BASE_DIR, "icon", "Precipitation.png")))
 my_label=Label(image=prep)
 my_label.place(x=175,y=180)
 my_label.configure(bg="#F0FFFF")
 
-hum=ImageTk.PhotoImage(Image.open("D:/GUI/icon/humidity.png"))
+hum=ImageTk.PhotoImage(Image.open(os.path.join(BASE_DIR, "icon", "humidity.png")))
 my_label=Label(image=hum)
 my_label.place(x=50,y=310)
 my_label.configure(bg="#F0FFFF")
 
-ws=ImageTk.PhotoImage(Image.open("D:/GUI/icon/Wind speed.png"))
+ws=ImageTk.PhotoImage(Image.open(os.path.join(BASE_DIR, "icon", "Wind speed.png")))
 my_label=Label(image=ws)
 my_label.place(x=170,y=310)
 my_label.configure(bg="#F0FFFF")

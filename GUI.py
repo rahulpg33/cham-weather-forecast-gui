@@ -1,3 +1,5 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 from tkinter import *
 import tkinter as tk 
 from geopy. geocoders import Nominatim 
@@ -72,7 +74,7 @@ def getweather():
   #  print(wind)
 
     
-image_icon=PhotoImage(file="D:\GUI\logo.png")
+image_icon=PhotoImage(file=os.path.join(BASE_DIR, "logo.png"))
 root.iconphoto(False,image_icon)
 
 
@@ -99,7 +101,7 @@ frame=Frame (root, width=900, height=180, bg="#212120")
 frame.pack(side=BOTTOM)
 
 #firstbox=PhotoImage (file="/home/ashikh/images/blackrounded1.png") 
-secondbox=PhotoImage(file="D:/GUI/blackrounded1.png")
+secondbox=PhotoImage(file=os.path.join(BASE_DIR, "blackrounded1.png"))
 
 ##Label (frame, image=firstbox, bg="#212120"). place (x=30,y=20)
 
@@ -128,7 +130,7 @@ label3.place(x=520,y=325)
 label4=Label(root, text="Wind speed", font=("Helvetica", 11), fg="white", bg="#283243")
 label4.place(x=740,y=325)
 
-box1=PhotoImage(file="D:\GUI\images.png")
+box1=PhotoImage(file=os.path.join(BASE_DIR, "images.png"))
 Label(root,image=box1).place(x=10,y=10)
 
 
@@ -159,7 +161,7 @@ w=Label(root, font=("Helvetica", 11), fg="white", bg="#203243")
 
 w.place(x=150,y=180)
 
-Search_icon=PhotoImage(file="D:\GUI\search icon.png") 
+Search_icon=PhotoImage(file=os.path.join(BASE_DIR, "search icon.png")) 
 myimage_icon=Button(image=Search_icon, borderwidth=0, cursor="hand2", bg="#872657", command=getweather) 
 myimage_icon.place(x=645,y=125)
 

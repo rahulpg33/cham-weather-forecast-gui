@@ -1,7 +1,9 @@
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 import numpy as np
 
-df=pd.read_csv('D:\Temp data.csv',index_col='Date',parse_dates=True)
+df=pd.read_csv(os.path.join(BASE_DIR, "Temp data.csv"),index_col='Date',parse_dates=True)
 df=df.dropna()
 print('Temperature_Data',df.shape)
 df.head()
@@ -43,7 +45,7 @@ model.summary()
 
 start=len(train)
 end=len(train)+len(test)-1
-pred=model.predict(start=start,end=end,typ='levels').rename('ARIMA predictions')
+pred=model.predict(start=start,end=end).rename('ARIMA predictions')
 pred
 test['Temperature']
 
@@ -61,11 +63,11 @@ df.tail()
 def Temper(date):
     index_future_dates=pd.date_range(start='2021-12-30',end='2022-01-29')
     index_future_dates=index_future_dates.astype(str)
-    temp_pred=model2.predict(start=len(df),end=len(df)+30,typ='levels').rename('ARIMA Predictions')
+    temp_pred=model2.predict(start=len(df),end=len(df)+30).rename('ARIMA Predictions')
     temp_pred.index=index_future_dates
     
     index_future_dates = index_future_dates.tolist()
     
     for i in range(0,30):
         if index_future_dates[i] == date:
-            return temp_pred[i]
+            return temp_pred.iloc[i]

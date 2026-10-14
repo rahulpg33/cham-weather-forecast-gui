@@ -36,5 +36,7 @@ python "Final GUI.py"
 
 Enter a date as `YYYY-MM-DD` between 2021-12-30 and 2022-01-28 and click the search icon.
 
-> **Note:** the scripts use absolute Windows paths (e.g. `D:/GUI/icon/...`, `D:\Temp data.csv`).
-> Update these to match where you cloned the repo before running.
+All file paths are resolved relative to each script, so the app runs from wherever you clone the repo.
+`Files/` is self-contained and can also be run on its own with `python "Files/GUI Final.py"`.
+
+> First launch takes a few seconds while the four ARIMA models are fitted.
