@@ -1,0 +1,6 @@
+#print(type(index_future_dates))
+    #print(type(index_future_dates[4]))
+    #print(pred[2])
+
+    #print(type(index_future_dates[2]))
+    #length= index_future_dates.len()
